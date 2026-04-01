@@ -244,6 +244,7 @@
                             </parameters>
                         </step>
                     </preprocessing>
+                    <timeout>1m</timeout>
                 </item>
                 <item>
                     <uuid>8c8022547a994d139228725fa955da1f</uuid>
