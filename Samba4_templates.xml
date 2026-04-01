@@ -1,235 +1,227 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>5.0</version>
-    <date>2021-06-28T08:50:45Z</date>
-    <groups>
-        <group>
-            <name>Templates/Operating systems</name>
-        </group>
-    </groups>
+    <version>7.4</version>
+    <template_groups>
+        <template_group>
+            <uuid>a571c0d144b14fd4a87a9d9b2aa9fcd6</uuid>
+            <name>Templates/Applications</name>
+        </template_group>
+    </template_groups>
     <templates>
         <template>
+            <uuid>a6a152f6cf074d03bad618ac4cc16548</uuid>
             <template>Samba4 AD</template>
             <name>Samba4 AD</name>
             <groups>
                 <group>
-                    <name>Templates/Operating systems</name>
+                    <name>Templates/Applications</name>
                 </group>
             </groups>
-            <applications>
-                <application>
-                    <name>Samba4 AD</name>
-                </application>
-            </applications>
             <items>
                 <item>
+                    <uuid>36bfed5f227d49199ae841ccdb865bf3</uuid>
                     <name>Samba 4 AD Kerberos</name>
                     <key>net.tcp.listen[88]</key>
-                    <delay>15m</delay>
                     <history>7d</history>
                     <trends>14d</trends>
                     <triggers>
                         <trigger>
-                            <expression>{last()}=0</expression>
+                            <uuid>06af4c4f86e948378771ce505221ab36</uuid>
+                            <expression>last(/Samba4 AD/net.tcp.listen[88])=0</expression>
                             <name>Samba 4 AD Kerberos Error</name>
                             <priority>HIGH</priority>
                         </trigger>
                     </triggers>
                 </item>
                 <item>
+                    <uuid>f0d64213d8fa4acbb5b1aa4e4ccc2c5d</uuid>
                     <name>Samba 4 AD Netbios</name>
                     <key>net.tcp.listen[139]</key>
-                    <delay>15m</delay>
                     <history>7d</history>
                     <trends>14d</trends>
                     <triggers>
                         <trigger>
-                            <expression>{last()}=0</expression>
+                            <uuid>a357ac93e7404646a1244c89e27fbbd8</uuid>
+                            <expression>last(/Samba4 AD/net.tcp.listen[139])=0</expression>
                             <name>Samba 4 AD Netbios Error</name>
                             <priority>WARNING</priority>
                         </trigger>
                     </triggers>
                 </item>
                 <item>
+                    <uuid>63dc42d0932e4de588f81c8e8e11ae22</uuid>
                     <name>Samba 4 AD Ldap</name>
                     <key>net.tcp.listen[389]</key>
-                    <delay>15m</delay>
                     <history>7d</history>
                     <trends>14d</trends>
                     <triggers>
                         <trigger>
-                            <expression>{last()}=0</expression>
+                            <uuid>794379e65f6045308d842a6c13137d84</uuid>
+                            <expression>last(/Samba4 AD/net.tcp.listen[389])=0</expression>
                             <name>Samba 4 AD Ldap Error</name>
                             <priority>HIGH</priority>
                         </trigger>
                     </triggers>
                 </item>
                 <item>
+                    <uuid>95566d730adf43778adb4305994d87f0</uuid>
                     <name>Samba 4 AD SMB over TCP</name>
                     <key>net.tcp.listen[445]</key>
-                    <delay>15m</delay>
                     <history>7d</history>
                     <trends>14d</trends>
                     <triggers>
                         <trigger>
-                            <expression>{last()}=0</expression>
+                            <uuid>1aea670d69ce45ef9d7453ba92d3816b</uuid>
+                            <expression>last(/Samba4 AD/net.tcp.listen[445])=0</expression>
                             <name>Samba 4 AD SMB over TCP Error</name>
                             <priority>AVERAGE</priority>
                         </trigger>
                     </triggers>
                 </item>
                 <item>
+                    <uuid>52de697690974248bba02076950dfb70</uuid>
                     <name>Samba 4 AD Kerberos Change/Set password</name>
                     <key>net.tcp.listen[464]</key>
-                    <delay>15m</delay>
                     <history>7d</history>
                     <trends>14d</trends>
                     <triggers>
                         <trigger>
-                            <expression>{last()}=0</expression>
+                            <uuid>78dc8acb0b6f4bd9a7e16d4a9dd0889a</uuid>
+                            <expression>last(/Samba4 AD/net.tcp.listen[464])=0</expression>
                             <name>Samba 4 AD Kerberos Change/Set password Error</name>
                             <priority>WARNING</priority>
                         </trigger>
                     </triggers>
                 </item>
                 <item>
+                    <uuid>a7fdcdf51c0549f5844ff52d6f4db120</uuid>
                     <name>Samba 4 AD Ldaps</name>
                     <key>net.tcp.listen[636]</key>
-                    <delay>15m</delay>
                     <history>7d</history>
                     <trends>14d</trends>
                     <status>DISABLED</status>
                     <triggers>
                         <trigger>
-                            <expression>{last()}=0</expression>
+                            <uuid>5790ee3613c24ac2841fcf475382a307</uuid>
+                            <expression>last(/Samba4 AD/net.tcp.listen[636])=0</expression>
                             <name>Samba 4 AD Ldaps Error</name>
                             <priority>HIGH</priority>
                         </trigger>
                     </triggers>
                 </item>
                 <item>
+                    <uuid>bce75255dbc8484d9699d98e39994096</uuid>
                     <name>Samba 4 AD Global Cataloge</name>
                     <key>net.tcp.listen[3268]</key>
-                    <delay>15m</delay>
                     <history>7d</history>
                     <trends>14d</trends>
                     <triggers>
                         <trigger>
-                            <expression>{last()}=0</expression>
+                            <uuid>50d12192ed7c4e81b4db267cd961eb2a</uuid>
+                            <expression>last(/Samba4 AD/net.tcp.listen[3268])=0</expression>
                             <name>Samba 4 AD Global Cataloge Error</name>
                             <priority>WARNING</priority>
                         </trigger>
                     </triggers>
                 </item>
                 <item>
+                    <uuid>78ecb3ebf04948b9a6916816473a7ec2</uuid>
                     <name>Samba 4 AD Global Cataloge SSL</name>
                     <key>net.tcp.listen[3269]</key>
-                    <delay>15m</delay>
                     <history>7d</history>
                     <trends>14d</trends>
                     <triggers>
                         <trigger>
-                            <expression>{last()}=0</expression>
+                            <uuid>2e0cfac6ca6b45b4b0bb2e37febdf574</uuid>
+                            <expression>last(/Samba4 AD/net.tcp.listen[3269])=0</expression>
                             <name>Samba 4 AD Global Cataloge SSL Error</name>
                             <priority>WARNING</priority>
                         </trigger>
                     </triggers>
                 </item>
                 <item>
+                    <uuid>281002d7f3b54744a5bd93ef1e55ef67</uuid>
                     <name>Samba 4 AD DNS</name>
                     <key>net.udp.listen[53]</key>
-                    <delay>15m</delay>
                     <history>7d</history>
                     <trends>14d</trends>
                     <triggers>
                         <trigger>
-                            <expression>{last()}=0</expression>
+                            <uuid>8151edd7d8804761b32aa81985e305cf</uuid>
+                            <expression>last(/Samba4 AD/net.udp.listen[53])=0</expression>
                             <name>Samba 4 AD DNS Error</name>
                             <priority>HIGH</priority>
                         </trigger>
                     </triggers>
                 </item>
                 <item>
-                    <name>Samba 4 AD getDbStatus</name>
-                    <key>samba4cmd[getDbStatus]</key>
-                    <delay>60m</delay>
-                    <history>7d</history>
-                    <trends>0</trends>
-                    <value_type>TEXT</value_type>
-                </item>
-                <item>
-                    <name>Samba 4 AD getJsonStatus</name>
-                    <key>samba4cmd[getJsonStatus]</key>
-                    <delay>15m</delay>
-                    <history>7d</history>
-                    <trends>14d</trends>
-                    <triggers>
-                        <trigger>
-                            <expression>{last()}=0</expression>
-                            <name>Samba 4 AD getJsonStatus Error</name>
-                            <priority>WARNING</priority>
-                            <description>0=Error&#13;
-1=Ok</description>
-                        </trigger>
-                    </triggers>
-                </item>
-                <item>
-                    <name>Samba 4 AD Samba Process</name>
-                    <key>samba4cmd[getProcessCount,samba]</key>
-                    <delay>5m</delay>
-                    <history>7d</history>
-                    <trends>14d</trends>
-                </item>
-                <item>
-                    <name>Samba 4 AD Smbd Process</name>
-                    <key>samba4cmd[getProcessCount,smbd]</key>
-                    <delay>5m</delay>
-                    <history>7d</history>
-                    <trends>14d</trends>
-                </item>
-                <item>
+                    <uuid>58ca48b231ab483ab1af16ac4eef0841</uuid>
                     <name>Samba 4 AD getDb Critical Error</name>
                     <type>DEPENDENT</type>
-                    <key>SAMBA4_DB_OBJ_CHECK</key>
-                    <delay>0</delay>
+                    <key>samba.db.check_error</key>
                     <history>7d</history>
                     <trends>14d</trends>
                     <preprocessing>
                         <step>
                             <type>JSONPATH</type>
-                            <params>$.SAMBA4_DB_OBJ_CHECK</params>
+                            <parameters>
+                                <parameter>$.exit</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>samba4cmd[getDbStatus]</key>
+                        <key>samba4cmd[dbcheck]</key>
                     </master_item>
                     <triggers>
                         <trigger>
-                            <expression>{last()}&lt;&gt;1</expression>
+                            <uuid>40e1e6405ab741b29fa3a29096ce2f78</uuid>
+                            <expression>last(/Samba4 AD/samba.db.check_error)&lt;&gt;0</expression>
                             <name>Samba 4 AD getDb Critical Error</name>
                             <priority>HIGH</priority>
                         </trigger>
                     </triggers>
                 </item>
                 <item>
-                    <name>Samba 4 AD getDb Error Obj</name>
+                    <uuid>adc74271e4644d91973a05983b1f4eb4</uuid>
+                    <name>Samba 4 AD getDb Total Obj</name>
                     <type>DEPENDENT</type>
-                    <key>SAMBA4_DB_OBJ_ERROR</key>
-                    <delay>0</delay>
+                    <key>samba.db.count</key>
                     <history>7d</history>
                     <trends>14d</trends>
                     <preprocessing>
                         <step>
                             <type>JSONPATH</type>
-                            <params>$.SAMBA4_DB_OBJ_ERROR</params>
+                            <parameters>
+                                <parameter>$.count</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>samba4cmd[getDbStatus]</key>
+                        <key>samba4cmd[dbcheck]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <uuid>49b1182d302f421fb96ed176a595df81</uuid>
+                    <name>Samba 4 AD getDb Error Obj</name>
+                    <type>DEPENDENT</type>
+                    <key>samba.db.errors</key>
+                    <history>7d</history>
+                    <trends>14d</trends>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <parameters>
+                                <parameter>$.errors</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>samba4cmd[dbcheck]</key>
                     </master_item>
                     <triggers>
                         <trigger>
-                            <expression>{last()}&lt;&gt;0</expression>
+                            <uuid>f205d440b4604ff7a99bd0edfc81e460</uuid>
+                            <expression>last(/Samba4 AD/samba.db.errors)&lt;&gt;0</expression>
                             <name>Samba 4 AD getDb Error Obj</name>
                             <priority>HIGH</priority>
                             <manual_close>YES</manual_close>
@@ -237,62 +229,131 @@
                     </triggers>
                 </item>
                 <item>
-                    <name>Samba 4 AD getDb Total Obj</name>
-                    <type>DEPENDENT</type>
-                    <key>SAMBA4_DB_OBJ_TOTAL</key>
-                    <delay>0</delay>
+                    <uuid>f51a5b020a9b4b59bea87c7ff4208652</uuid>
+                    <name>Samba 4 AD getDbStatus</name>
+                    <key>samba4cmd[dbcheck]</key>
+                    <delay>1h</delay>
                     <history>7d</history>
-                    <trends>14d</trends>
+                    <value_type>TEXT</value_type>
                     <preprocessing>
                         <step>
-                            <type>JSONPATH</type>
-                            <params>$.SAMBA4_DB_OBJ_TOTAL</params>
+                            <type>REGEX</type>
+                            <parameters>
+                                <parameter>Checked ([0-9]+) objects \(([0-9]+) errors\)\nexit code ([0-9]+)</parameter>
+                                <parameter>{&quot;count&quot;: \1, &quot;errors&quot;: \2, &quot;exit&quot;: \3}</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
-                    <master_item>
-                        <key>samba4cmd[getDbStatus]</key>
-                    </master_item>
                 </item>
                 <item>
-                    <name>Samba 4 AD Version</name>
-                    <key>system.run[&quot;samba-tool --version&quot;]</key>
+                    <uuid>8c8022547a994d139228725fa955da1f</uuid>
+                    <name>Samba 4 AD Samba Process</name>
+                    <key>samba4cmd[ps]</key>
+                    <history>7d</history>
+                    <trends>14d</trends>
+                </item>
+                <item>
+                    <uuid>569faa333de642b09725e54a3db8e62b</uuid>
+                    <name>Samba 4 AD NTDS replications</name>
+                    <key>samba4cmd[replicas]</key>
                     <delay>15m</delay>
                     <history>7d</history>
-                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <parameters>
+                                <parameter>var result = JSON.parse(value.replace(/\\/g,&quot;\\\\&quot;));
+return JSON.stringify(result);</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <timeout>1m</timeout>
+                </item>
+                <item>
+                    <uuid>9e9a6f4d6dd346dbba33886714c9cbb7</uuid>
+                    <name>Samba 4 AD Version</name>
+                    <key>samba4cmd[version]</key>
+                    <delay>1h</delay>
+                    <history>7d</history>
                     <value_type>TEXT</value_type>
                 </item>
             </items>
             <discovery_rules>
                 <discovery_rule>
-                    <name>repsFrom</name>
-                    <key>samba4cmd[&quot;getErrorFrom&quot;]</key>
-                    <delay>15m</delay>
+                    <uuid>1491b8ccf5524c469fb35d38ee442eca</uuid>
+                    <name>SAMBA4 AD NTDS connections</name>
+                    <type>DEPENDENT</type>
+                    <key>samba.ntds.connections</key>
                     <lifetime>1h</lifetime>
+                    <enabled_lifetime_type>DISABLE_NEVER</enabled_lifetime_type>
                     <item_prototypes>
                         <item_prototype>
-                            <name>repsFrom {#DSA} {#NC_DN}</name>
-                            <key>samba4cmd[getFromErrorDetails,{#NC_DN},{#DSA_OBJECTGUID}]</key>
+                            <uuid>775f80c088364a0abc4267cdf3010901</uuid>
+                            <name>SAMBA4 AD NTDS connection to {#DNS_NAME}</name>
+                            <type>DEPENDENT</type>
+                            <key>samba.ntds.connections[{#DNS_NAME}]</key>
+                            <history>7d</history>
+                            <value_type>TEXT</value_type>
                             <preprocessing>
                                 <step>
-                                    <type>JAVASCRIPT</type>
-                                    <params>var myArray = JSON.parse(value);
-for (var i = 0; i &lt; myArray .length; i++){
-  var obj = myArray[i];
-  var risultato = &quot;&quot;;
-  for (var key in obj){
-    var value = obj[key];
-    var n = key.endsWith(&quot;CONSECUTIVE_FAILURES}&quot;);
-    if (n){
-      risultato = value;
-    }
-  }
-}
-return risultato</params>
+                                    <type>JSONPATH</type>
+                                    <parameters>
+                                        <parameter>$.NTDSConnections[?(@[&quot;dns name&quot;] == &quot;{#DNS_NAME}&quot;)].first()</parameter>
+                                    </parameters>
                                 </step>
                             </preprocessing>
+                            <master_item>
+                                <key>samba4cmd[replicas]</key>
+                            </master_item>
+                        </item_prototype>
+                    </item_prototypes>
+                    <master_item>
+                        <key>samba4cmd[replicas]</key>
+                    </master_item>
+                    <lld_macro_paths>
+                        <lld_macro_path>
+                            <lld_macro>{#DNS_NAME}</lld_macro>
+                            <path>$[&quot;dns name&quot;]</path>
+                        </lld_macro_path>
+                    </lld_macro_paths>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <parameters>
+                                <parameter>$.NTDSConnections[*]</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                </discovery_rule>
+                <discovery_rule>
+                    <uuid>fb269d2ac0db40b58f737339f9dd9a15</uuid>
+                    <name>SAMBA4 AD NTDS replications from</name>
+                    <type>DEPENDENT</type>
+                    <key>samba.ntds.replications_from</key>
+                    <lifetime>1h</lifetime>
+                    <enabled_lifetime_type>DISABLE_NEVER</enabled_lifetime_type>
+                    <item_prototypes>
+                        <item_prototype>
+                            <uuid>52fe352f2be741739ea6fc9bfcb42d73</uuid>
+                            <name>SAMBA4 AD NTDS replication from {#DSA} of {#NC_DN}</name>
+                            <type>DEPENDENT</type>
+                            <key>samba.ntds.replications_from[{#DSA},{#NC_DN}]</key>
+                            <preprocessing>
+                                <step>
+                                    <type>JSONPATH</type>
+                                    <parameters>
+                                        <parameter>$.repsFrom[?(@[&quot;NC dn&quot;] == &quot;{#NC_DN}&quot;)][&quot;consecutive failures&quot;].first()</parameter>
+                                    </parameters>
+                                </step>
+                            </preprocessing>
+                            <master_item>
+                                <key>samba4cmd[replicas]</key>
+                            </master_item>
                             <trigger_prototypes>
                                 <trigger_prototype>
-                                    <expression>{last()}&gt;0</expression>
+                                    <uuid>99fecdbb7ec545268e404cbdb5bb1bea</uuid>
+                                    <expression>last(/Samba4 AD/samba.ntds.replications_from[{#DSA},{#NC_DN}])&gt;0</expression>
                                     <name>Check Samba 4 AD Replication From {#DSA} {#NC_DN}</name>
                                     <priority>WARNING</priority>
                                     <manual_close>YES</manual_close>
@@ -300,37 +361,61 @@ return risultato</params>
                             </trigger_prototypes>
                         </item_prototype>
                     </item_prototypes>
+                    <master_item>
+                        <key>samba4cmd[replicas]</key>
+                    </master_item>
+                    <lld_macro_paths>
+                        <lld_macro_path>
+                            <lld_macro>{#DSA_OBJECTGUID}</lld_macro>
+                            <path>$[&quot;DSA objectGUID&quot;]</path>
+                        </lld_macro_path>
+                        <lld_macro_path>
+                            <lld_macro>{#DSA}</lld_macro>
+                            <path>$[&quot;DSA&quot;]</path>
+                        </lld_macro_path>
+                        <lld_macro_path>
+                            <lld_macro>{#NC_DN}</lld_macro>
+                            <path>$[&quot;NC dn&quot;]</path>
+                        </lld_macro_path>
+                    </lld_macro_paths>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <parameters>
+                                <parameter>$.repsFrom[?(@[&quot;consecutive failures&quot;] &gt;-1)]</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>repsTo</name>
-                    <key>samba4cmd[getErrorTo]</key>
-                    <delay>15m</delay>
+                    <uuid>aa3f5bef17e74dc9b6a28904ad77f76b</uuid>
+                    <name>SAMBA4 AD NTDS replications to</name>
+                    <type>DEPENDENT</type>
+                    <key>samba.ntds.replications_to</key>
                     <lifetime>1h</lifetime>
+                    <enabled_lifetime_type>DISABLE_NEVER</enabled_lifetime_type>
                     <item_prototypes>
                         <item_prototype>
-                            <name>repsTo {#DSA} {#NC_DN}</name>
-                            <key>samba4cmd[getToErrorDetails,{#NC_DN},{#DSA_OBJECTGUID}]</key>
+                            <uuid>85d564efcce647a8ac71db240060d3f5</uuid>
+                            <name>SAMBA4 AD NTDS replication to {#DSA} of {#NC_DN}</name>
+                            <type>DEPENDENT</type>
+                            <key>samba.ntds.replications_to[{#DSA},{#NC_DN}]</key>
+                            <trends>0</trends>
                             <preprocessing>
                                 <step>
-                                    <type>JAVASCRIPT</type>
-                                    <params>var myArray = JSON.parse(value);
-for (var i = 0; i &lt; myArray .length; i++){
-  var obj = myArray[i];
-  var risultato = &quot;&quot;;
-  for (var key in obj){
-    var value = obj[key];
-    var n = key.endsWith(&quot;CONSECUTIVE_FAILURES}&quot;);
-    if (n){
-      risultato = value;
-    }
-  }
-}
-return risultato</params>
+                                    <type>JSONPATH</type>
+                                    <parameters>
+                                        <parameter>$.repsTo[?(@[&quot;NC dn&quot;] == &quot;{#NC_DN}&quot;)][&quot;consecutive failures&quot;].first()</parameter>
+                                    </parameters>
                                 </step>
                             </preprocessing>
+                            <master_item>
+                                <key>samba4cmd[replicas]</key>
+                            </master_item>
                             <trigger_prototypes>
                                 <trigger_prototype>
-                                    <expression>{last()}&gt;0</expression>
+                                    <uuid>ca46f7153e3f430bb73978d3926083b3</uuid>
+                                    <expression>last(/Samba4 AD/samba.ntds.replications_to[{#DSA},{#NC_DN}])&gt;0</expression>
                                     <name>Check Samba 4 AD Replication To {#DSA} {#NC_DN}</name>
                                     <priority>WARNING</priority>
                                     <manual_close>YES</manual_close>
@@ -338,53 +423,45 @@ return risultato</params>
                             </trigger_prototypes>
                         </item_prototype>
                     </item_prototypes>
-                </discovery_rule>
-                <discovery_rule>
-                    <name>NTDSConnections</name>
-                    <key>samba4cmd[getNTDSConnections]</key>
-                    <delay>15m</delay>
-                    <lifetime>1h</lifetime>
-                    <item_prototypes>
-                        <item_prototype>
-                            <name>NTDSConnections To {#DNS_NAME}</name>
-                            <key>samba4cmd[getNTDSConnectionsDetails,{#NAME}]</key>
-                            <delay>2h</delay>
-                            <history>7d</history>
-                            <trends>0</trends>
-                            <value_type>TEXT</value_type>
-                            <preprocessing>
-                                <step>
-                                    <type>JAVASCRIPT</type>
-                                    <params>var myArray = JSON.parse(value);
-for (var i = 0; i &lt; myArray .length; i++){
-  var obj = myArray[i];
-  var risultato = &quot;&quot;;
-  for (var key in obj){
-    var value = obj[key];
-    var n = key.endsWith(&quot;DNS_NAME}&quot;);
-    if (n){
-      risultato = value;
-    }
-  }
-}
-return risultato</params>
-                                </step>
-                            </preprocessing>
-                        </item_prototype>
-                    </item_prototypes>
+                    <master_item>
+                        <key>samba4cmd[replicas]</key>
+                    </master_item>
+                    <lld_macro_paths>
+                        <lld_macro_path>
+                            <lld_macro>{#DSA_OBJECTGUID}</lld_macro>
+                            <path>$[&quot;DSA objectGUID&quot;]</path>
+                        </lld_macro_path>
+                        <lld_macro_path>
+                            <lld_macro>{#DSA}</lld_macro>
+                            <path>$[&quot;DSA&quot;]</path>
+                        </lld_macro_path>
+                        <lld_macro_path>
+                            <lld_macro>{#NC_DN}</lld_macro>
+                            <path>$[&quot;NC dn&quot;]</path>
+                        </lld_macro_path>
+                    </lld_macro_paths>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <parameters>
+                                <parameter>$.repsTo[?(@[&quot;consecutive failures&quot;] &gt;-1)]</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
                 </discovery_rule>
             </discovery_rules>
         </template>
     </templates>
     <graphs>
         <graph>
+            <uuid>d0ca532b883448fe96ebdf38b90497e3</uuid>
             <name>Samba 4 AD Objects</name>
             <graph_items>
                 <graph_item>
                     <color>FF0000</color>
                     <item>
                         <host>Samba4 AD</host>
-                        <key>SAMBA4_DB_OBJ_ERROR</key>
+                        <key>samba.db.errors</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -392,12 +469,13 @@ return risultato</params>
                     <color>4CAF50</color>
                     <item>
                         <host>Samba4 AD</host>
-                        <key>SAMBA4_DB_OBJ_TOTAL</key>
+                        <key>samba.db.count</key>
                     </item>
                 </graph_item>
             </graph_items>
         </graph>
         <graph>
+            <uuid>10b2574ea7fd414d9f7cbf14f3611241</uuid>
             <name>Samba 4 AD Samba Process</name>
             <graph_items>
                 <graph_item>
@@ -405,16 +483,7 @@ return risultato</params>
                     <calc_fnc>ALL</calc_fnc>
                     <item>
                         <host>Samba4 AD</host>
-                        <key>samba4cmd[getProcessCount,samba]</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>1</sortorder>
-                    <color>66BB6A</color>
-                    <calc_fnc>ALL</calc_fnc>
-                    <item>
-                        <host>Samba4 AD</host>
-                        <key>samba4cmd[getProcessCount,smbd]</key>
+                        <key>samba4cmd[ps]</key>
                     </item>
                 </graph_item>
             </graph_items>

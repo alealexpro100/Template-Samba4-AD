@@ -1,29 +1,25 @@
 # Template-Samba4-AD
-This is my personale Samba4 AD Template for Zabbix 5
+This is my personale Samba4 AD Template for Zabbix 7.4.8.
+Tested on Debian 13, zabbix agent2, zabbix 7.4.8.
 
-# Introduction
-Until today 26/6/2021 there is no decent Zabbix Template (just my own opinion) for monitoring Samba4 AD so I am still using Nagios just for this, until today. Enjoy! This template is tested wind Zabbix Server 5, Centos 7 DC and Zabbix Agent2.
+# Agent configuration
+1) Copy samba4_ad.conf to zabbix_agent2.d folder and restart it:
 
-# Installation
-1) install jq with yum or apt install jq
+```
+cp samba4_ad.conf /etc/zabbix/zabbix_agent2.d/samba4_ad.conf
+systemctl restart zabbix-agent2
+```
 
-sudo apt-get install jq
+4) Allow 'zabbix' user to run all commands without password:
 
-2) copy samba4_ad.conf in your zabbix-agent2.d etc folder
+```
+cp zabbix-sudoers /etc/sudoers.d/zabbix
+chmod 440 /etc/sudoers.d/zabbix
+```
 
-Es: /etc/zabbix/zabbix_agentd2.d/samba4_ad.conf
+5) copy `samba4_ad.sh` to /usr/local/bin:
 
-3) add zabbix user to sudo with visudo
-
-4) allows 'zabbix' user to run all commands without password.
-zabbix ALL=NOPASSWD: ALL
-
-5) Allow active-check in your /etc/zabbix/zabbix_agentd2.conf and AllowKey=system.run[*]
-
-6) copy samba4_ad.sh in /usr/local/bin
-
-7) add cron tasks like:
-
-*/15 * * * * /usr/local/bin/samba4_ad.sh doJson > /dev/null 2>&1
-
-0 */2 * * * /usr/local/bin/samba4_ad.sh doDbCheck > /dev/null 2>&1
+```
+cp samba4_ad.sh /usr/local/bin/samba4_ad.sh
+chmod 755 /usr/local/bin/samba4_ad.sh
+```
