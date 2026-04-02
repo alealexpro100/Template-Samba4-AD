@@ -13,8 +13,7 @@ if [ "$1" = "dbcheck" ]; then
   echo "exit code $?"
 fi
 if [ "$1" = "ps" ]; then
-    # Get samba root process id and then count childs of it
-    ps -g $(ps -ax -o 'pid=,comm=' | grep samba | awk '{print $1}') | wc -l
+  ps -ax -o 'pid=,args=' | grep '\/\(samba\|smbd\|nmbd\|winbindd\)' | wc -l
 fi
 if [ "$1" = "version" ]; then
   samba-tool --version | tail -n 1
